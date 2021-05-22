@@ -7,7 +7,7 @@ from sklearn.preprocessing import MinMaxScaler
 
 app = Flask(__name__)
 
-net = cv2.dnn.readNetFromTensorflow('MDS-Project/FlaskServer/graph.pb')
+net = cv2.dnn.readNetFromTensorflow('MDS-Project/FlaskServer/graph_opt.pb')
 model = tf.keras.models.load_model('MDS-Project/FlaskServer/saved_models/openpose_bicepscurl_nobg_sigmoid')
 
 scaler = MinMaxScaler()
