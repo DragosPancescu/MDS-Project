@@ -7,8 +7,8 @@ from sklearn.preprocessing import MinMaxScaler
 
 app = Flask(__name__)
 
-net = cv2.dnn.readNetFromTensorflow('graph_opt.pb')
-model = tf.keras.models.load_model('saved_models\openpose_bicepscurl_nobg_sigmoid')
+net = cv2.dnn.readNetFromTensorflow('MDS-Project/FlaskServer/graph.pb')
+model = tf.keras.models.load_model('MDS-Project/FlaskServer/saved_models/openpose_bicepscurl_nobg_sigmoid')
 
 scaler = MinMaxScaler()
 IMG_SIZE = 256
@@ -153,13 +153,13 @@ def function():
         """
 
         # Fragment the video into frames
-        fragment_video('videos\\1.mp4', 'frames', 250)
+        fragment_video('MDS-Project/FlaskServer/saved_videos/1.mp4', 'MDS-Project/FlaskServer/frames', 250)
 
         # Read the frames
-        input_data = read_frames('frames')
+        input_data = read_frames('MDS-Project/FlaskServer/frame')
 
         # Delete the frames
-        delete_frames('frames')
+        delete_frames('MDS-Project/FlaskServer/frame')
 
         # Run the openpose model over the frames
         x_valid_video = process_openpose_data(input_data, scaler, fit=True)
