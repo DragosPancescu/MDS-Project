@@ -156,10 +156,10 @@ def function():
         fragment_video('MDS-Project/FlaskServer/saved_videos/1.mp4', 'MDS-Project/FlaskServer/frames', 250)
 
         # Read the frames
-        input_data = read_frames('MDS-Project/FlaskServer/frame')
+        input_data = read_frames('MDS-Project/FlaskServer/frames')
 
         # Delete the frames
-        delete_frames('MDS-Project/FlaskServer/frame')
+        delete_frames('MDS-Project/FlaskServer/frames')
 
         # Run the openpose model over the frames
         x_valid_video = process_openpose_data(input_data, scaler, fit=True)
