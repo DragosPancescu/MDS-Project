@@ -179,4 +179,4 @@ def function():
     return f'Biceps curl: {round(score, 2)}% correct'
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=80)
